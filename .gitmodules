@@ -1,0 +1,6 @@
+[submodule "Matrices"]
+	path = Matrices
+	url = https://github.com/milos85vasic/Apache-Factory-Config-Wordpress.git
+[submodule "Setup"]
+	path = Setup
+	url = https://github.com/milos85vasic/Apache-Factory-Website-Installer.git
