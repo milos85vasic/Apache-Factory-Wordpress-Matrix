@@ -1,11 +1,20 @@
 from configuration import *
 from Setup.Tools.commands import *
+from Setup.Tools.configuration import *
+
+import sys
 
 
 def prepare():
-    print("Preparing Wordpress installation.")
+    url = sys.argv[2]
+    account = sys.argv[1]
+    print("Preparing Wordpress installation: " + account + ", " + url)
     steps = [
+        concatenate(
+            mkdir(content_dir_name),
+            cd(content_dir_name),
 
+        )
     ]
 
     run(steps)
