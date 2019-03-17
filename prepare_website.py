@@ -13,7 +13,9 @@ def prepare():
         concatenate(
             mkdir(content_dir_name),
             cd(content_dir_name),
-
+            wget(download_url),
+            extract(download_url),
+            rm(downloaded_file)
         )
     ]
 
