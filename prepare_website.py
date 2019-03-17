@@ -14,8 +14,8 @@ def prepare():
             mkdir(content_dir_name),
             cd(content_dir_name),
             wget(download_url),
-            extract(download_url)
-            #,rm(downloaded_file)
+            extract(downloaded_file),
+            rm(downloaded_file)
         )
     ]
 
