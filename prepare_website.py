@@ -10,8 +10,8 @@ def prepare():
     account = sys.argv[1]
     print("Preparing Wordpress installation: " + account + ", " + url)
     steps = [
+        mkdir(content_dir_name),
         concatenate(
-            mkdir(content_dir_name),
             cd(content_dir_name),
             wget(download_url),
             extract(downloaded_file),
