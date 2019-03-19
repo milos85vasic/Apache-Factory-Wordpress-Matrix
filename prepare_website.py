@@ -9,14 +9,17 @@ def prepare():
     url = sys.argv[2]
     account = sys.argv[1]
     print("Preparing Wordpress installation: " + account + ", " + url)
+    service_root = get_home_directory_path(account) + "/" + content_dir_name + "/" + url
+    d_dir = service_root + "/" + content_dir_name
+    d_file = d_dir + "/" + downloaded_file
     steps = [
-        mkdir(content_dir_name),
         concatenate(
-            cd(content_dir_name),
-            wget(download_url),
-            extract(downloaded_file),
-            rm(downloaded_file)
-        )
+            cd(service_root),
+            mkdir(content_dir_name)
+        ),
+        wget(download_url, destination=d_dir),
+        extract(d_file, destination=d_dir),
+        rm(d_file)
     ]
 
     run(steps)
