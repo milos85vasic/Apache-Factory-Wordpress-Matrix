@@ -32,7 +32,7 @@ def prepare():
             mysql_port = system_configuration[account][key_configuration_port_mysql]
 
     mysql_full_path = get_home_directory_path(account) + "/" + mysql + "/"
-    init_database = mysql_full_path + mysql_bin_dir + "/mysql --host=127.0.0.1 --port=" + mysql_port + \
+    init_database = mysql_full_path + mysql_bin_dir + "/mysql --host=127.0.0.1 --port=" + str(mysql_port) + \
                     " --user=root --password=" + mysql_password + " < "
 
     steps = [
