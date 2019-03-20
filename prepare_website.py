@@ -37,7 +37,7 @@ def prepare():
 
     steps = [
         cp(
-            matrices_dir_name + "/" + create_database_matrix_file,
+            service_root + "/" + matrices_dir_name + "/" + create_database_matrix_file,
             service_root + "/" + create_database_matrix_file
         ),
         python(
@@ -53,7 +53,9 @@ def prepare():
         ),
         wget(download_url, destination=d_dir),
         extract(d_file, destination=d_dir),
-        rm(d_file)
+        rm(d_file),
+        rm_files(service_root + "/" + create_database_matrix_file),
+        rm_files(service_root + "/" + create_database_sql_file)
     ]
 
     run(steps)
